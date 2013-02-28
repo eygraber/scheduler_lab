@@ -1,5 +1,5 @@
-scheduler : main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm
-	g++ -o linker main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm
+scheduler : main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
+	g++ -o scheduler main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
 
 main.o : main.cpp Process.h Scheduler.h
 	g++ -c main.cpp
