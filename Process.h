@@ -69,11 +69,11 @@ class Process {
             startCycle = UNINITIALIZED_PROCESS_VAL;
             finishCycle = UNINITIALIZED_PROCESS_VAL;
 
-            onArrived = nullptr;
-            onReady = nullptr;
-            onRunning = nullptr;
-            onBlocked = nullptr;
-            onFinished = nullptr;
+            onArrived = NULL;
+            onReady = NULL;
+            onRunning = NULL;
+            onBlocked = NULL;
+            onFinished = NULL;
         }
 
         int getProcessId() { return procId; }

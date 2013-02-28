@@ -12,7 +12,7 @@ Scheduler::SchedulingAlgorithm* Scheduler::getSchedulingAlgorithm(AlgorithmTypes
         case SRJF:
             return new SRJFAlgorithm(this);
         default:
-            return nullptr; //its an error
+            return NULL; //its an error
     }
 }
 

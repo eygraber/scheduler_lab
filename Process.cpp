@@ -6,7 +6,7 @@ void Process::cycle(int cycleNum) {
             if(cycleNum == getArrivalCycle()) {
                 setIsReady();
 
-                if(onArrived != nullptr) {
+                if(onArrived != NULL) {
                     onArrived->run(this);
                 }
             }
@@ -18,7 +18,7 @@ void Process::cycle(int cycleNum) {
                 setStartCycle(cycleNum);
             }
 
-            if(onRunning != nullptr) {
+            if(onRunning != NULL) {
                 onRunning->run(this);
             }
 
@@ -30,14 +30,14 @@ void Process::cycle(int cycleNum) {
             if(getCpuTimeRemaining() == getCpuTimeBeforeBlock()) {
                 if(getIoTimeRemaining() > 0) {
                     setIsBlocked();
-                    if(onBlocked != nullptr) {
+                    if(onBlocked != NULL) {
                         onBlocked->run(this);
                     }
                 }
             }
             else if(getCpuTimeRemaining() == 0) {
                 setIsFinished();
-                if(onFinished != nullptr) {
+                if(onFinished != NULL) {
                     onFinished->run(this);
                 }
                 setFinishCycle(cycleNum);
@@ -58,7 +58,7 @@ void Process::cycle(int cycleNum) {
             if(getIoTimeRemaining() == 0) {
                 setIsReady();
 
-                if(onReady != nullptr) {
+                if(onReady != NULL) {
                     onReady->run(this);
                 }
             }
