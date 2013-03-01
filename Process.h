@@ -61,7 +61,12 @@ class Process {
     public:
         Process(int procId, int cpuTime, int totalIoTime, int arrivalCycle, ProcessState state = NOT_ARRIVED)
             : procId(procId), totalCpuTime(cpuTime), totalIoTime(totalIoTime), arrivalCycle(arrivalCycle), state(state) {
-            cpuTimeBeforeBlock = ceil(totalCpuTime / 2);
+            if(totalCpuTime == 1) {
+                cpuTimeBeforeBlock = 1;
+            }
+            else {
+                cpuTimeBeforeBlock = ceil(totalCpuTime / 2);
+            }
             cpuTimeRemaining = totalCpuTime;
 
             ioTimeRemaining = totalIoTime;
