@@ -19,8 +19,6 @@ int main(int argc, char** argv) {
     InputHandler ih;
 
     for(int i = 1; i < argc; i++) {
-        cout.rdbuf(coutbuf);
-
         for(int algType = FCFS; algType <= SRJF; algType++) {
             ostringstream oss;
             oss << getFileNameWithoutExtension(argv[i]) << "-" << algType << ".txt";
@@ -32,11 +30,19 @@ int main(int argc, char** argv) {
                 cout << "There was an error parsing the input for " << argv[i] << "!" << endl;
                 continue;
             }
-            
+
             Scheduler* s = new Scheduler((AlgorithmTypes)algType, processes);
             s->startScheduler();
             s->printStatistics();
             delete s;
+
+            vector<Process*>::iterator it;
+            for(it = processes->begin(); it != processes->end(); it++) {
+                delete (*it);
+            }
+            delete processes;
+
+            cout.rdbuf(coutbuf);
         }
     }
 
@@ -60,6 +66,6 @@ char* getFileNameWithoutExtension(char* name) {
         char* newName = new char[dotPos + 1];
 	strncpy(newName, name, dotPos);
         newName[dotPos] = '\0';
-        return newName;   
+        return newName;
     }
 }
