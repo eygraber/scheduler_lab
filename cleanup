@@ -1,0 +1,4 @@
+make clean
+rm test-0.txt
+rm test-1.txt
+rm test-2.txt
