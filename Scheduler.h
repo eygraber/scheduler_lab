@@ -134,10 +134,7 @@ class Scheduler {
         void printStatistics();
 
         ~Scheduler() {
-            for(it = allProcesses->begin(); it != allProcesses->end(); it++) {
-                delete (*it);
-            }
-            delete allProcesses;
+            delete alg;
             delete readyQ;
             delete movedToReadyState;
         }
