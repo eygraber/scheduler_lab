@@ -1,12 +1,14 @@
-scheduler : main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
-	g++ -o scheduler main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
+scheduler : main.o Process.o Scheduler.o InputHandler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
+	g++ -o scheduler main.o Process.o Scheduler.o InputHandler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
 
-main.o : main.cpp Process.h Scheduler.h
+main.o : main.cpp Process.h Scheduler.h InputHandler.h
 	g++ -c main.cpp
 Process.o : Process.cpp Process.h
 	g++ -c Process.cpp
 Scheduler.o : Scheduler.cpp Scheduler.h Process.h
 	g++ -c Scheduler.cpp
+InputHandler.o : InputHandler.cpp Process.h
+	g++ -c InputHandler.cpp
 FCFSAlgorithm.o : FCFSAlgorithm.cpp FCFSAlgorithm.h Scheduler.h
 	g++ -c FCFSAlgorithm.cpp
 RRAlgorithm.o : RRAlgorithm.cpp RRAlgorithm.h Scheduler.h
@@ -14,4 +16,4 @@ RRAlgorithm.o : RRAlgorithm.cpp RRAlgorithm.h Scheduler.h
 SRJFAlgorithm.o : SRJFAlgorithm.cpp SRJFAlgorithm.h Scheduler.h
 	g++ -c SRJFAlgorithm.cpp
 clean : 
-	rm scheduler main.o Process.o Scheduler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o
+	rm scheduler main.o Process.o Scheduler.o InputHandler.o FCFSAlgorithm.o RRAlgorithm.o SRJFAlgorithm.o

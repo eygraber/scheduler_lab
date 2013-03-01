@@ -18,6 +18,7 @@ Scheduler::SchedulingAlgorithm* Scheduler::getSchedulingAlgorithm(AlgorithmTypes
 
 void Scheduler::printStatistics() {
     cout << "Finishing time: " << (getCurrentCycle() - 1) << endl;
+    cout.precision(2);
     cout << "CPU utilization: " << getCpuUtilization() << endl;
 
     for(it = allProcesses->begin(); it != allProcesses->end(); it++) {
