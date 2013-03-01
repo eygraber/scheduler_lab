@@ -76,6 +76,14 @@ class Process {
             onFinished = NULL;
         }
 
+        ~Process() {
+            delete onArrived;
+            delete onReady;
+            delete onRunning;
+            delete onBlocked;
+            delete onFinished;
+        }
+
         int getProcessId() { return procId; }
         int getTotalCpuTime() { return totalCpuTime; }
         int getCpuTimeBeforeBlock() { return cpuTimeBeforeBlock; }
