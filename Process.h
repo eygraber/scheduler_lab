@@ -65,7 +65,12 @@ class Process {
                 cpuTimeBeforeBlock = 1;
             }
             else {
-                cpuTimeBeforeBlock = ceil(totalCpuTime / 2);
+                if(totalIoTime == 0 && totalCpuTime % 2 != 0) {
+                    cpuTimeBeforeBlock = totalCpuTime;
+                }
+                else {
+                    cpuTimeBeforeBlock = ceil(totalCpuTime / 2);
+                }
             }
             cpuTimeRemaining = totalCpuTime;
 

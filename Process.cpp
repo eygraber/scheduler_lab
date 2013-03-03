@@ -27,6 +27,11 @@ void Process::cycle(int cycleNum) {
                 //throw exception
             }
 
+            //in the special case of 0 ioTime and odd cpuTime
+            //getCpuTimeRemaining() will never equal getCpuTimeBeforeBlock()
+            //because we initialize cpuTimeRemaining and cpuTimeBeforeBlock to totalCpuTime
+            //and since there is a call that decrements cpuTimeRemaining before this check
+            //it will never equal totalCpuTime at this point
             if(getCpuTimeRemaining() == getCpuTimeBeforeBlock()) {
                 if(getIoTimeRemaining() > 0) {
                     setIsBlocked();
