@@ -5,14 +5,14 @@
 1362065806 e:\desktop\scheduler_lab\fcfsalgorithm.h
 	"Scheduler.h"
 
-1362132409 e:\desktop\scheduler_lab\scheduler.h
+1362395736 e:\desktop\scheduler_lab\scheduler.h
 	<queue>
 	<algorithm>
 	<vector>
 	<iostream>
 	"Process.h"
 
-1362304164 e:\desktop\scheduler_lab\process.h
+1362397044 e:\desktop\scheduler_lab\process.h
 	<iostream>
 	<cmath>
 
@@ -26,7 +26,7 @@
 	<vector>
 	"Process.h"
 
-1362132602 source:e:\desktop\scheduler_lab\main.cpp
+1362393588 source:e:\desktop\scheduler_lab\main.cpp
 	"Process.h"
 	"Scheduler.h"
 	"InputHandler.h"
@@ -36,7 +36,7 @@
 	<cstring>
 	<vector>
 
-1362073139 source:e:\desktop\scheduler_lab\process.cpp
+1362304686 source:e:\desktop\scheduler_lab\process.cpp
 	"Process.h"
 
 1362069376 source:e:\desktop\scheduler_lab\rralgorithm.cpp

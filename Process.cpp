@@ -3,6 +3,7 @@
 void Process::cycle(int cycleNum) {
     switch(getState()) {
         case NOT_ARRIVED:
+            //if the process is supposed to arrive at this cycle
             if(cycleNum == getArrivalCycle()) {
                 setIsReady();
 
@@ -14,6 +15,7 @@ void Process::cycle(int cycleNum) {
         case RUNNING:
             cout << getProcessId() << ":running ";
 
+            //if this is the first cycle the process is running
             if(getCpuTimeRemaining() == getTotalCpuTime()) {
                 setStartCycle(cycleNum);
             }

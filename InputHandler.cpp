@@ -15,7 +15,7 @@ vector<Process*>* InputHandler::parseInput(char* path) {
         if(procId < 0 || cpuTime < 0 || ioTime < 0 || arrivalCycle < 0) {
             return NULL;
         }
-        processes->push_back(new Process(procId, cpuTime, ioTime, arrivalCycle)); 
+        processes->push_back(new Process(procId, cpuTime, ioTime, arrivalCycle));
     }
 
     inputFile.close();
@@ -23,6 +23,7 @@ vector<Process*>* InputHandler::parseInput(char* path) {
     return processes;
 }
 
+//parses out data separated by whitespace or newlines
 int InputHandler::parseData(ifstream* s) {
     char c;
     string str = "";
@@ -37,7 +38,7 @@ int InputHandler::parseData(ifstream* s) {
         str += c;
 
         if(!s->good()){
-            break; 
+            break;
         }
 
         c = s->get();
@@ -48,7 +49,7 @@ int InputHandler::parseData(ifstream* s) {
 
         if(!s->good()) {
             return atoi(str.c_str());
-        } 
+        }
     }
 
     s->unget();
