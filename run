@@ -1,4 +1,4 @@
 make clean
 make
 clear
-./scheduler test.txt
+./scheduler test.txt 0 test.txt 1 test.txt 2
