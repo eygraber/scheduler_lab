@@ -7,3 +7,5 @@ Scheduler.cbp
 Scheduler.depend
 
 test-*.txt
+
+*.o
